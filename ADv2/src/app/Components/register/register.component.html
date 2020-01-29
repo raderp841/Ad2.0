@@ -1,14 +1,32 @@
-<form>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="emailConfirm">Confirm email</label>
+    <input type="email" class="form-control" id="emailConfirm" formControlName="emailConfirm" aria-describedby="emailHelp" placeholder="Confirm email" (keyup)="checkEmailMatch()">
+    <small id="emailHelp" class="form-text text-danger" *ngIf="!isMatchingEmail">Emails provided do not match.</small>
+  </div>
+  <div class="form-group">
+    <label for="firstName">First name</label>
+    <input type="text" class="form-control" id="firstName" formControlName="firstName" aria-describedby="emailHelp" placeholder="Enter first name">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <input type="text" class="form-control" id="lastName" formControlName="lastName" aria-describedby="emailHelp" placeholder="Enter last name">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword">Confirm password</label>
+    <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" aria-describedby="passHelp" placeholder="Confirm password" (keyup)="checkPassMatch()">
+    <small id="passHelp" class="form-text text-danger" *ngIf="!isMatchingPass">Passwords provided do not match.</small>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <hr />
-  <a routerLink="/login">Already a user?</a>
+  <a routerLink="/login">Alread a user?</a>
 </form>
+

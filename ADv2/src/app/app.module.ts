@@ -9,6 +9,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthComponent } from './Components/auth/auth/auth.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    AuthComponent
   ],
   imports: [
       BrowserModule,

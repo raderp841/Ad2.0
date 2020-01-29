@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../Models/user.model';
+import { Register } from '../Models/register.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,11 @@ export class DataService {
         console.log(user);        
         if (user.length == 1) return user[0];
         return this.invalidUser;
+    }
+
+    postNewUser(reg: Register) {
+        var user = new User((this.users.length + 1), reg.email, reg.password, reg.firstName, reg.lastName, 0);
+        this.users.push(user);
+        return this.getUserByEmailPassword(reg.email, reg.password);
     }
 }
