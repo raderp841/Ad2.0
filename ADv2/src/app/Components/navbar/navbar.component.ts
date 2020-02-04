@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from '../../Services/user.service';
 import { User } from '../../Models/user.model';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -13,12 +14,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
     logedIn: boolean = false;
     userSub: Subscription;
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService, private router: Router ) { }
 
     ngOnInit() {
         this.userSub = this.userService.userSub.subscribe(u => {
             console.log(u);
-            if (!u || u.id == -1) {
+            if (u == null || u.id == -1) {
                 this.logedIn = false;
             }
             else {
@@ -29,7 +30,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
 
     onLogout() {
-        this.userService.clearUser();
+        //this.userService.clearUser();
+        this.router.navigate(['./login']);
     }
 
     ngOnDestroy() {

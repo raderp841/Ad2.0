@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Register } from '../../Models/register.model';
 import { LoginService } from '../../Services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
     isMatchingPass: boolean = true;
     isMatchingEmail: boolean = true;
 
-    constructor(private loginService: LoginService) { }
+    constructor(private loginService: LoginService, private router: Router) { }
 
     ngOnInit() {
         this.setUpForm();
@@ -38,7 +39,11 @@ export class RegisterComponent implements OnInit {
         var password = this.registerForm.controls['password'].value;
         var reg: Register = new Register(email, firstName, lastName, password);
 
-        this.loginService.registerUser(reg);
+        if (this.loginService.registerUser(reg)) {
+            console.log('go to dash');
+            this.router.navigate(['/dashboard']);
+        }
+        this.setUpForm();
     }
 
     checkEmailMatch() {

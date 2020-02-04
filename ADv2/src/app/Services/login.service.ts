@@ -28,4 +28,13 @@ export class LoginService {
         }
         return true;
     }
+
+    guestLogin() {
+        var user = this.httpService.loginUser('guest@user.com', 'GuestUser123!');
+        this.userService.setUser(user);
+        if (user.id == -1) {
+            return false;
+        }
+        return true;
+    }
 }

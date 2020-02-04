@@ -8,6 +8,7 @@ import { Register } from '../Models/register.model';
 export class DataService {
 
     users: User[] = [
+        new User(-2, 'guest@user.com', 'GuestUser123!', 'Guest', 'User', 0),
         new User(1, 'peter@rader.com', 'Test123!', 'Peter', 'Rader', 9),
         new User(2, 'john@doe.com', 'Test123!', 'John', 'Doe', 0),
         new User(3, 'cora@rader.com', 'Test123!', 'Cora', 'Rader', 3),

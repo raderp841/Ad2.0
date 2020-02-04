@@ -4,12 +4,9 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Components",
-    "\\src\\app\\Components\\auth\\auth",
-    "\\src\\app\\Components\\login",
-    "\\src\\app\\Components\\register",
-    "\\src\\app\\Models",
+    "\\src\\app\\Components\\dashboard",
     "\\src\\app\\Services"
   ],
-  "SelectedNode": "\\src\\app\\Services\\token.service.ts",
+  "SelectedNode": "\\src\\app\\Services\\user.service.ts",
   "PreviewInSolutionExplorer": false
 }

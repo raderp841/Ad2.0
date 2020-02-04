@@ -1,14 +1,24 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+<div *ngIf="!isLoggedIn">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <hr />
+    <a routerLink="/register">New user?</a>
+    <hr />
+    <a style="color: blue; cursor:pointer" (click)="onGuestLogin()">Continue as Guest</a>
+  </form>
+</div>
+<div *ngIf="isLoggedIn">
+  <h2>Are you sure you wish to log out?</h2>
+  <button class="btn btn-primary" (click)="onStayLoggedIn()">Stay Logged in as {{firstName}}</button>
   <hr />
-  <a routerLink="/register">New user?</a>
-</form>
+  <button class="btn btn-danger"(click)="onLogout()">Logout</button>
+</div>

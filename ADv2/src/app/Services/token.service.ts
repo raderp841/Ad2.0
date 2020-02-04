@@ -11,10 +11,12 @@ export class TokenService {
     constructor() { }
 
     getToken() {
+        console.log(this.currentToken);
         return this.currentToken;
     }
 
     setToken(token: Token) {
         this.currentToken = token;
+        console.log(this.currentToken);
     }
 }

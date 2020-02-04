@@ -16,7 +16,7 @@ export class HttpService {
     loginUser(email: string, password: string) {
         //will be http get request to api
         var user = this.dataService.getUserByEmailPassword(email, password);
-        if (!!user || user.id == -1) {
+        if (user == null || user.id == -1) {
 
         }
         else {
