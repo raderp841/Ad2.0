@@ -60,6 +60,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         }
     }
 
+    onDevLogin() {
+        this.loginData = new Login('peter@rader.com', 'Test123!');
+        if (this.loginService.loginUser(this.loginData)) {
+            this.router.navigate(['/dashboard']);
+        }
+    }
+
     onGuestLogin() {
         if(this.loginService.guestLogin()) {
             this.router.navigate(['/dashboard']);

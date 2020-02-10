@@ -1,0 +1,7 @@
+<div *ngFor="let store of stores">
+  <div class="card text-center store-hover" (click)="onSelectStore(store.id, $event)">
+    <div class="card-body">
+      {{store.name}}
+    </div>
+  </div>
+</div>

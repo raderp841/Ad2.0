@@ -40,4 +40,13 @@ export class HttpService {
 
         return user;
     }
+
+    getStoresForUser() {
+        //http request with token
+       return this.dataService.getStoresForUser(this.tokenService.getToken());
+    }
+
+    getOrdersForStore(storeId: number) {
+        return this.dataService.getOrdersForStore(this.tokenService.getToken(), storeId); 
+    }
 }

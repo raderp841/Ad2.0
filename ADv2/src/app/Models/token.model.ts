@@ -28,4 +28,9 @@ export class Token {
         this.expire = new Date();
         this.expire.setDate(this.created.getDate() + 1);
     }
+
+    checkTokenValid() {
+        if (this.expire <= new Date()) return false;
+        return true;
+    }
 }

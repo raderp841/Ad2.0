@@ -10,12 +10,21 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './Components/auth/auth/auth.component';
+import { StoresComponent } from './Components/stores/stores.component';
+import { OrderListComponent } from './Components/order-list/order-list.component';
+import { StoreOrdersComponent } from './Components/store-orders/store-orders.component';
+import { OrderComponent } from './Components/order/order.component';
+import { FromTwentyFourPipe } from './Pipes/from-twenty-four.pipe';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent }
+    { path: 'register', component: RegisterComponent },
+    { path: 'stores', component: StoreOrdersComponent },
+    { path: 'stores/:id', component: StoresComponent },
+    { path: 'order/:id', component: OrderComponent},
+    { path: '**', component: DashboardComponent}
 ];
 
 @NgModule({
@@ -26,7 +35,12 @@ const appRoutes: Routes = [
     RegisterComponent,
     NavbarComponent,
     DashboardComponent,
-    AuthComponent
+    AuthComponent,
+    StoresComponent,
+    OrderListComponent,
+    StoreOrdersComponent,
+    OrderComponent,
+    FromTwentyFourPipe
   ],
   imports: [
       BrowserModule,

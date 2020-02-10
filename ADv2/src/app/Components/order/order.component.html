@@ -1,0 +1,77 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="pickupName">Pickup Name</label>
+      <input type="text" class="form-control" id="pickupName" formControlName="pickupName" />
+    </div>
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="orderName">Order Name</label>
+      <input type="text" class="form-control" id="orderName" formControlName="orderName" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="tel" class="form-control" id="phoneNumber" formControlName="phoneNumber" />
+    </div>
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="orderDate">Order Date</label>
+      <input type="date" class="form-control" id="orderDate" formControlName="orderDate" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="orderTime">Order Time</label>
+      <input type="text" class="form-control" id="orderTime" formControlName="orderTime" />
+    </div>
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="pickupDate">Pickup Date</label>
+      <input type="date" class="form-control" id="pickupDate" formControlName="pickupDate" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="pickupTime">Pickup Time</label>
+      <input type="text" class="form-control" id="pickupTime" formControlName="pickupTime" />
+    </div>
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="chickenPcs">Chicken Pieces</label>
+      <input type="number" class="form-control" id="chickenPcs" formControlName="chickenPcs" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="jojoPcs">Jojo Pieces</label>
+      <input type="number" class="form-control" id="jojoPcs" formControlName="jojoPcs" />
+    </div>
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="details">Details</label>
+      <textarea class="form-control" id="details" formControlName="details"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="store">Store</label>
+      <input type="text" class="form-control" id="store" formControlName="store" />
+    </div>
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="isActive">Active</label>
+      <input type="checkbox" class="form-control" id="isActive" formControlName="isActive" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="isCompleted">Completed</label>
+      <input type="checkbox" class="form-control" id="isCompleted" formControlName="isCompleted" />
+    </div>
+    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <label for="isCancelled">Cancelled</label>
+      <input type="checkbox" class="form-control" id="isCancelled" formControlName="isCancelled" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Pickup Name</th>
+          <th>Pickup Date</th>
+          <th>Pickup Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of ordersForStore" [ngClass]="{'active-order': order.isActive, 'inactive-order': !order.isActive}" (click)="onOrderClicked(order)">
+          <td>{{order.pickupName}}</td>
+          <td>{{order.pickupDate | date}}</td>
+          <td>{{order.pickupTime | fromTwentyFour}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.store-hover {
+  cursor: pointer;
+}
+
+.store-hover:hover{
+  background-color:lightgrey;
+}
+
+.active-click{
+  background-color:lightblue;
+}
